@@ -56,23 +56,23 @@ ESCUELA DE INGENIERÍA DE FUENLABRADA
 \vspace{1cm}
 
 \LARGE
-TITULACIÓN EN MAYÚSCULAS
+INGENIERÍA EN SISTEMAS AUDIOVISUALES Y MULTIMEDIA
 
 \vspace{1cm}
 \LARGE
-\textbf{TRABAJO FIN DE GRADO/MÁSTER}
+\textbf{TRABAJO FIN DE GRADO}
 
 \vspace{2cm}
 
 \Large
-TÍTULO DEL TRABAJO EN MAYÚSCULAS
+PLATAFORMA WEB PARA PROYECTOS DE ARQUITECTURA
 
 \vspace{2cm}
 
 \large
-Autor : Nombre del Alumno/a \\
-Tutor : Dr. Nombre del Profesor/a\\
-Cotutor: (si procede)
+Autor : Bayas Pancho, Karol Joseth \\
+Tutor : Robles Martínez, Gregorio\\
+Cotutor: De Jorge Huertas, Virginia 
 \vspace{1cm}
 
 \large
@@ -96,21 +96,21 @@ Curso académico 202X/202X
 \vspace{-4cm}
 \begin{center}
 \LARGE
-\textbf{Trabajo Fin de Grado/Máster}
+\textbf{Trabajo Fin de Grado}
 
 \vspace{1cm}
 \large
-Título del Trabajo con Letras Capitales para Sustantivos y Adjetivos
+Plataforma WEB para Proyectos de Arquitectura
 
 \vspace{1cm}
 \large
-\textbf{Autor :} Nombre del Alumno/a \\
-\textbf{Tutor :} Dr. Nombre del Profesor/a
+\textbf{Autor :} Bayas Pancho, Karol Joseth \\
+\textbf{Tutor :} Robles Martínez, Gregorio
 
 \end{center}
 
 \vspace{1cm}
-La defensa del presente Proyecto Fin de Carrera se realizó el día \qquad$\;\,$ de \qquad\qquad\qquad\qquad \newline de 202X, siendo calificada por el siguiente tribunal:
+La defensa del presente Proyecto Fin de Carrera se realizó el día \qquad$\;\,$ de \qquad\qquad\qquad\qquad \newline de 2024, siendo calificada por el siguiente tribunal:
 
 
 \vspace{0.5cm}
@@ -152,8 +152,10 @@ mi familia / mi abuelo / mi abuela}
 %\addcontentsline{toc}{chapter}{Agradecimientos} % si queremos que aparezca en el índice
 \markboth{AGRADECIMIENTOS}{AGRADECIMIENTOS} % encabezado 
 
-Aquí vienen los agradecimientos\ldots Aunque está bien acordarse de la pareja, no hay que olvidarse de dar las gracias a tu madre, que aunque a veces no lo parezca disfrutará tanto de tus logros como tú\ldots 
-Además, la pareja quizás no sea para siempre, pero tu madre sí.
+Con la finalizacion de este proyecto doy por finalizada mi etapa universitaris por lo que antetodo me gustaria presentar la gratitud que siento hacia los profesores de la ETSI. A lo largo de estos años, su orientación y sabiduría me han guiado en mi camino académico. 
+En particular, quiero expresar mi sincero agradecimiento a Gregorio Robles, quien no solo nos introdujo en el vasto mundo del desarrollo web, sino que también creyó en mí para la realización de este proyecto. Su constante disponibilidad para orientarme y su apoyo inquebrantable han sido invaluables.
+No puedo dejar de mencionar el apoyo incondicional de mi familia: mis padres y hermanos. Siempre estuvieron ahí para mí, ofreciendo su aliento y amor en cada paso del camino. Sus palabras de ánimo fueron mi fuerza, y por eso les estoy eternamente agradecido.
+A todos los que de alguna manera han contribuido a este trabajo, muchas gracias. Cada palabra de aliento, cada gesto de apoyo, ha sido fundamental para llegar hasta aquí. Este logro es tan suyo como mío.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Resumen
@@ -162,17 +164,21 @@ Además, la pareja quizás no sea para siempre, pero tu madre sí.
 %\addcontentsline{toc}{chapter}{Resumen} % si queremos que aparezca en el índice
 \markboth{RESUMEN}{RESUMEN} % encabezado
 
-Aquí viene un resumen del proyecto.
-Ha de constar de tres o cuatro párrafos, donde se presente de manera clara y concisa de qué va el proyecto. 
-Han de quedar respondidas las siguientes preguntas:
+Este proyecto representa la creación de una plataforma web dedicada a proyectos de arquitectura, 
+desarrollada como parte del trabajo de fin de grado en ingeniería en sistemas audiovisuales y multimedia. 
 
-\begin{itemize}
-  \item ¿De qué va este proyecto? ¿Cuál es su objetivo principal?
-  \item ¿Cómo se ha realizado? ¿Qué tecnologías están involucradas?
-  \item ¿En qué contexto se ha realizado el proyecto? ¿Es un proyecto dentro de un marco general?
-\end{itemize}
+La plataforma, construida con el framework Flask de Python, tiene como objetivo principal facilitar la 
+colaboración y comunicación entre estudiantes y profesores de arquitectura. Permite a usuarios registrados, 
+incluyendo alumnos y profesores, realizar diversas acciones como añadir eventos, libros y archivos. 
+Además, cuenta con un administrador que gestiona la base de datos del sistema. 
 
-Lo mejor es escribir el resumen al final.
+La aplicación también ofrece funcionalidades para la carga y gestión de archivos, como imágenes, videos y PDFs, 
+relacionados con los libros de arquitectura presentes en la plataforma. 
+
+Diseñada para ser accesible desde cualquier navegador, la plataforma proporciona diferentes niveles 
+de funcionalidad según el tipo de usuario. Este enfoque busca mejorar la experiencia educativa al 
+proporcionar un medio digital para compartir información relevante y fomentar la comunicación en el
+ contexto educativo de la arquitectura.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Resumen en inglés
@@ -181,10 +187,21 @@ Lo mejor es escribir el resumen al final.
 %\addcontentsline{toc}{chapter}{Summary} % si queremos que aparezca en el índice
 \markboth{SUMMARY}{SUMMARY} % encabezado
 
-Here comes a translation of the ``Resumen'' into English. 
-Please, double check it for correct grammar and spelling.
-As it is the translation of the ``Resumen'', which is supposed to be written at the end, this as well should be filled out just before submitting.
-
+This project involves the creation of a web platform for architectural projects, developed as part
+ of the final project for a degree in audiovisual and multimedia systems engineering. The main 
+ objective of the platform is to facilitate collaboration and communication among architecture students 
+ and professors. 
+ 
+ Built using the Flask framework in Python, the platform allows registered users, including both students 
+ and teachers, to perform various actions such as adding events, books, and files. Additionally, it features 
+ an administrator who manages the system's database. 
+ 
+ The application also provides functionalities for uploading and managing files, such as images, videos, 
+ and PDFs, related to architecture books on the platform. Designed to be accessible from any internet browser, 
+ the platform offers different levels of functionality depending on the type of user accessing it. 
+ 
+ This approach aims to enhance the educational experience by providing a digital medium for sharing relevant 
+ information and fostering communication in the educational context of architecture.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -217,125 +234,111 @@ As it is the translation of the ``Resumen'', which is supposed to be written at 
 \label{sec:intro} % etiqueta para poder referenciar luego en el texto con ~\ref{sec:intro}
 \pagenumbering{arabic} % para empezar la numeración de página con números
 
-En este capítulo se introduce el proyecto.
-Debería tener información general sobre el mismo, dando la información sobre el contexto en el que se ha desarrollado.
+En el ámbito de la educación arquitectónica, la necesidad de una colaboración eficiente y una 
+comunicación fluida se ha vuelto cada vez más crucial. Este proyecto aborda esta necesidad al introducir 
+una plataforma web sofisticada diseñada para estudiantes y profesores en el campo de la arquitectura. 
 
-No te olvides de echarle un ojo a la página con los cinco errores de escritura más frecuentes\footnote{\url{http://www.tallerdeescritores.com/errores-de-escritura-frecuentes}}.
+Desarrollada como culminación del proyecto final para obtener un título en ingeniería de sistemas audiovisuales 
+y multimedia, la plataforma sirve como un centro centralizado para compartir información relevante y facilitar 
+la comunicación sobre eventos en curso a lo largo de los cursos académicos.
 
-Aconsejo a todo el mundo que mire y se inspire en memorias pasadas.
-Las memorias de los proyectos que he llevado yo están (casi) todas almacenadas en mi web del GSyC\footnote{\url{https://gsyc.urjc.es/~grex/pfcs/}}.
-
-En mayo de 2023 me apunté a un curso de innovación docente donde nos pidieron hacer un podcast con temática docente. Aproveché entonces para hacer un podcast de unos 30 minutos donde en los primeros quince minutos introducía LaTeX y la memoria, y en los segundos hacía hincapién en aquellas cosas que más os cuestan utilizar en la memoria: las figuras, las tablas y las citas. Podéis escuchar el podcast en Internet\footnote{\url{https://podcasters.spotify.com/pod/show/gregorio-robles9/episodes/Tu-memoria-de-Trabajo-Fin-de-Grado-o-de-Mster-en-LaTeX-e23hucr/a-a58kp2}}.
-
-
-\section{Sección}
+\section{Motivación}
 \label{sec:seccion}
 
-Esto es una sección, que es una estructura menor que un capítulo. 
 
-Por cierto, a veces me comentáis que no os compila por las tildes.
-Eso es un problema de codificación.
-Al guardar el archivo, guardad la codificación de ``ISO-Latin-1'' a ``UTF-8'' (o viceversa) y funcionará.
+En el trasfondo de la educación arquitectónica, me impulsa la firme convicción de que la tecnología puede desempeñar un papel transformador al mejorar la colaboración y la comunicación entre estudiantes y profesores. Inspirado por mis tutores Virginia y Gregorio en el deseo de superar las barreras existentes en la interacción educativa, he decidido emprender el desarrollo de esta plataforma web.
 
-\subsection{Estilo}
-\label{subsec:estilo}
+La motivación central detrás de esta iniciativa es la necesidad de proporcionar a la comunidad educativa de arquitectura una herramienta digital que simplifique y enriquezca su experiencia de aprendizaje. Observando las limitaciones en la comunicación y el intercambio de información, he visualizado esta plataforma como un espacio virtual donde la colaboración se vuelve intuitiva y donde la información relevante fluye de manera efectiva.
 
-Recomiendo leer los consejos prácticos sobre escribir documentos científicos en \LaTeX \ de Diomidis Spinellis\footnote{\url{https://github.com/dspinellis/latex-advice}}.
+Con el objetivo de fomentar la participación activa, la plataforma busca ir más allá de ser simplemente un repositorio de datos. Pretende ser un medio dinámico donde los estudiantes pueden compartir ideas, los profesores pueden proporcionar orientación y todos pueden estar al tanto de los eventos educativos cruciales. La creación de esta plataforma no solo es un ejercicio técnico, sino una contribución tangible a la mejora de la calidad educativa en el ámbito de la arquitectura.
 
-Lee sobre el uso de las comas\footnote{\url{http://narrativabreve.com/2015/02/opiniones-de-un-corrector-de-estilo-11-recetas-para-escribir-correctamente-la-coma.html}}. 
-Las comas en español no se ponen al tuntún.
-Y nunca, nunca entre el sujeto y el predicado (p.ej. en ``Yo, hago el TFG'' sobre la coma).
-La coma no debe separar el sujeto del predicado en una oración, pues se cortaría la secuencia natural del discurso.
-No se considera apropiado el uso de la llamada coma respiratoria o \emph{coma criminal}.
-Solamente se suele escribir una coma para marcar el lugar que queda cuando omitimos el verbo de una oración, pero es un caso que se da de manera muy infrecuente al escribir un texto científico (p.ej. ``El Real Madrid, campeón de Europa'').
+Creo firmemente que, al proporcionar un entorno digital eficiente y fácil de usar, esta plataforma puede marcar la diferencia al facilitar la colaboración, fomentar la comunicación y, en última instancia, elevar el estándar de la educación arquitectónica. Esta motivación arraigada en la mejora continua y la innovación tecnológica impulsa mi dedicación a la creación de esta herramienta que aspira a enriquecer la experiencia educativa para estudiantes y profesores por igual.
+\section{Objetivos e hipótesis de investigación}
+\label{sec:seccion}
 
-A continuación, viene una figura, la Figura~\ref{figura:foro_hilos}. 
-Observarás que el texto dentro de la referencia es el identificador de la figura (que se corresponden con el ``label'' dentro de la misma). 
-También habrás tomado nota de cómo se ponen las ``comillas dobles'' para que se muestren correctamente. 
-Nota que hay unas comillas de inicio (``) y otras de cierre (''), y que son diferentes.
-Volviendo a las referencias, nota que al compilar, la primera vez se crea un diccionario con las referencias, y en la segunda compilación se ``rellenan'' estas referencias. 
-Por eso hay que compilar dos veces tu memoria.
-Si no, no se crearán las referencias.
-
-
-
- \begin{figure}
-    \centering
-    \includegraphics[bb=0 0 800 600, width=12cm, keepaspectratio]{img/foro1}
-    \caption{Página con enlaces a hilos}
-    \label{figura:foro_hilos}
- \end{figure}
-
-
-A continuación un bloque ``verbatim'', que se utiliza para mostrar texto tal cual.
-Se puede utilizar para ofrecer el contenido de correos electrónicos, código, entre otras cosas.
-
-
-{\footnotesize
-\begin{verbatim}
-    From gaurav at gold-solutions.co.uk  Fri Jan 14 14:51:11 2005
-    From: gaurav at gold-solutions.co.uk (gaurav_gold)
-    Date: Fri Jan 14 19:25:51 2005
-    Subject: [Mailman-Users] mailman issues
-    Message-ID: <003c01c4fa40$1d99b4c0$94592252@gaurav7klgnyif>
-
-    Dear Sir/Madam,
-    How can people reply to the mailing list?  How do i turn off
-    this feature? How can i also enable a feature where if someone
-    replies the newsletter the email gets deleted?
-    Thanks
-
-    From msapiro at value.net  Fri Jan 14 19:48:51 2005
-    From: msapiro at value.net (Mark Sapiro)
-    Date: Fri Jan 14 19:49:04 2005
-    Subject: [Mailman-Users] mailman issues
-    In-Reply-To: <003c01c4fa40$1d99b4c0$94592252@gaurav7klgnyif>
-    Message-ID: <PC173020050114104851057801b04d55@msapiro>
-
-    gaurav_gold wrote:
-    >How can people reply to the mailing list?  How do i turn off
-    this feature? How can i also enable a feature where if someone
-    replies the newsletter the email gets deleted?
-
-    See the FAQ
-    >Mailman FAQ: http://www.python.org/cgi-bin/faqw-mm.py
-    article 3.11
-\end{verbatim}
-}
-
-
-
-\section{Estructura de la memoria}
-\label{sec:estructura}
-
-
-\begin{figure}
-  \centering
-  \includegraphics[width=9cm, keepaspectratio]{img/arquitectura.png}
-  \caption{Estructura del parser básico}
-  \label{fig:arquitectura}
-\end{figure}
-
-
-
-
-En esta sección se debería introducir la estructura de la memoria. 
-
-Así:
-
+\subsection{Objetivos de Investigación}
+\label{subsec:Objetivos de Investigación}
 
 \begin{itemize}
-  \item En el primer capítulo se hace una intro al proyecto.
-  
-  \item En el capítulo~\ref{chap:objetivos} (ojo, otra referencia automática) se muestran los objetivos del proyecto.
-  
-  \item A continuación se presenta el estado del arte en el capítulo~\ref{chap:estado}.
-  
-  \item \ldots
+  \item Facilitar la Colaboración: Crear un entorno digital que promueva la colaboración entre estudiantes y profesores de arquitectura, facilitando el intercambio de información y recursos educativos.
+  \item Centralizar Recursos: Desarrollar una plataforma que sirva como repositorio central para libros, archivos y otros recursos relacionados con la arquitectura, mejorando el acceso y la gestión de la información educativa.
+  \item Mejorar la Comunicación: Implementar herramientas de comunicación efectiva, como la organización de eventos y foros, para fomentar la interacción activa y el intercambio de ideas entre los usuarios.
+  \item Optimizar la Experiencia del Usuario: Diseñar una interfaz intuitiva y fácil de usar que se adapte a las necesidades específicas de los estudiantes y profesores de arquitectura, mejorando la experiencia de navegación y participación.
 \end{itemize}
 
+\subsection{Hipótesis de Investigación}
+\label{subsec:Hipótesis de Investigación}
 
+\begin{itemize}
+  \item Mayor Colaboración con la Plataforma: Se espera que la implementación de la plataforma web aumente la colaboración entre estudiantes y profesores, proporcionando un espacio digital propicio para compartir conocimientos y experiencias.
+  \item Eficiencia en la Gestión de Recursos: La centralización de recursos, como libros y archivos, en la plataforma resultará en una gestión más eficiente y accesible de los materiales educativos, beneficiando tanto a estudiantes como a profesores.
+  \item Mejora en la Comunicación: La introducción de herramientas de comunicación, como eventos y foros, contribuirá a una comunicación más efectiva entre los usuarios, fomentando la participación activa y la discusión de temas relevantes.
+  \item Aumento de la Participación: La optimización de la experiencia del usuario en la plataforma generará un aumento en la participación, ya que los usuarios encontrarán la interfaz intuitiva y amigable, facilitando su interacción con la plataforma.
+\end{itemize}
 
+{\footnotesize
+\begin{center}
+\begin{verbatim}
+proyecto_arquitectura/
+|-- static/
+|   |-- archivos/
+|   |   |-- imagenes/
+|   |   |-- videos/
+|   |   |-- pdf/
+|   |-- css/
+|   |-- js/
+|-- templates/
+|   |-- admin/
+|   |   |-- index.html
+|   |   |-- login.html
+|   |   |-- registro.html
+|   |   |-- ...
+|   |-- sitio/
+|       |-- books.html
+|       |-- calendar.html
+|       |-- ...
+|-- sitio_routes.py
+|-- admin_routes.py
+|-- decorators.py
+|-- config.py
+|-- app.py
+|-- requirements.txt
+\end{verbatim}
+\end{center}
+}
+
+\section{Estructura de la memoria}
+\label{sec:seccion}
+
+A continuación, se presenta una descripción de la estructura de la memoria, 
+detallando el contenido de cada uno de los capítulos para proporcionar 
+una guía organizada del trabajo de fin de grado:
+
+\begin{itemize}
+  \item \textbf{Capítulo 1:} Introducción \\
+  En este capítulo, se presenta el contexto del trabajo, se define el problema de 
+  investigación y se destacan los objetivos del estudio. Además, se ofrece una breve 
+  descripción de la metodología utilizada y se justifica la relevancia del tema.
+  \item \textbf{Capítulo 2:} Objetivos del Proyecto \\
+  En este capítulo se proporciona información detallada sobre el diseño, las 
+  características y los usos de cada una de las tecnologías usadas en el proyecto. 
+
+  \item \textbf{Capítulo 3:} Tecnologías Utilizadas \\
+  En este capítulo se proporciona información detallada sobre el diseño, las 
+  características y los usos de cada una de las tecnologías usadas en el proyecto.
+
+  \item \textbf{Capítulo 4:} Funcionamiento de la Aplicación \\
+  En este capítulo, se entra en detalle en el funcionamiento de la aplicación.
+
+  \item \textbf{Capítulo 5:} Experimentos y Pruebas \\
+  Se presentan los diferentes experimentos realizados y se prueba el correcto funcionamiento de la aplicación.
+
+  \item \textbf{Capítulo 6:} Resultados Obtenidos \\
+  En este capítulo, se explican los resultados obtenidos al poner a prueba varios aspectos de la aplicación.
+
+  \item \textbf{Capítulo 7:} Conclusiones \\
+  Se indican los resultados conseguidos y la solución a los objetivos no conseguidos.
+\end{itemize}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -349,26 +352,51 @@ Así:
 
 \section{Objetivo general} % título de sección (se muestra)
 \label{sec:objetivo-general} % identificador de sección (no se muestra, es para poder referenciarla)
+El propósito de este proyecto es crear un sistema de administración destinado a gestionar libros, documentos y eventos. 
+Su objetivo principal es mejorar la experiencia de los usuarios al facilitar el acceso a la información a través de una 
+interfaz intuitiva. Para garantizar la seguridad de la plataforma, se implementarán funcionalidades como inicio de sesión 
+y restablecimiento de contraseña.
 
-Aquí vendría el objetivo general en una frase:
-Mi trabajo fin de grado consiste en crear de una herramienta de análisis de los comentarios jocosos en repositorios de software libre alojados en la plataforma GitHub.
-
-Recuerda que los objetivos siempre vienen en infinitivo.
-
-
+En esta plataforma, nos centramos en la interacción de los usuarios para la gestión de eventos y la administración de libros. 
+También hemos integrado herramientas administrativas que facilitarán a los usuarios interactuar de manera eficiente y efectiva. 
+Queremos que la experiencia sea lo más amigable posible para todos los que utilicen este sistema.
 \section{Objetivos específicos}
 \label{sec:objetivos-especificos}
-
-Los objetivos específicos se pueden entender como las tareas en las que se ha desglosado el objetivo general.
-Y, sí, también vienen en infinitivo.
-
+\begin{enumerate}
+  \item \textbf{Desarrollar vistas de administración:} Crear vistas administrativas para la gestión de libros, eventos y usuarios.
+  \item \textbf{Sistema de autenticación:} Desarrollar un sistema de autenticación para permitir el acceso seguro a las funcionalidades administrativas.
+  \item \textbf{Diseñar páginas de visualización:} Diseñar páginas de visualización de libros, eventos y comentarios para todos los usuarios.
+  \item \textbf{Integrar un sistema de comentarios:} Integrar un sistema de comentarios para permitir a los usuarios expresar sus opiniones sobre los libros.
+  \item \textbf{Gestión de eventos:} Implementar la gestión de eventos, permitiendo la visualización y edición de ellos.
+  \item \textbf{Administrar libros:} Desarrollar funciones para agregar, editar y eliminar libros ademas de asociarlos con autores.
+  \item \textbf{Herramientas administrativas:} Implementar herramientas administrativas para la gestión de usuarios, roles y permisos.
+  \item \textbf{Optimizar seguridad:} Mejorar la seguridad de las contraseñas mediante el uso de técnicas seguras de almacenamiento y recuperación.
+  \item \textbf{Restricciones de acceso:} Aplicar restricciones de acceso basadas en roles para controlar qué usuarios pueden acceder a determinadas funcionalidades.
+  \item \textbf{Integridad de los datos:} Implementar medidas para garantizar la integridad de los datos, evitando inconsistencias y errores en la base de datos.
+\end{enumerate}
 
 \section{Planificación temporal}
 \label{sec:planificacion-temporal}
 
-A mí me gusta que aquí pongáis una descripción de lo que os ha llevado realizar el trabajo.
-Hay gente que añade un diagrama de GANTT.
-Lo importante es que quede claro cuánto tiempo llevas (tiempo natural, p.ej., 6 meses) y a qué nivel de esfuerzo (p.ej., principalmente los fines de semana).
+A finales de julio del año pasado, inicié mi proyecto de fin de grado. Todo comenzó en julio de 2023 cuando el profesor 
+Gregorio Robles Martínez me sugirió la idea del proyecto que he llevado a cabo.
+
+Durante los meses de julio y agosto, comencé a reunirme con Virginia, mi cotutora del Trabajo de Fin de Grado (TFG), 
+y juntos empezamos a planificar las partes básicas que quería reflejar en el sitio web. Luego, realicé un estudio de 
+diversas páginas que ella me proporcionó, de las cuales obtuve algunas ideas para implementar en el proyecto.
+
+De agosto a octubre, me sumergí en la implementación de la página web, siguiendo ciertos requisitos como una vista para 
+usuarios registrados y otra pública. La vista de usuario se detalló en cada tutoría, abordando aspectos como la implementación 
+de diferentes permisos, la admisión de usuarios y la recuperación de contraseñas.
+
+En los meses de noviembre y diciembre, se llevó a cabo la incorporación del calendario y la vista de libros, con comentarios 
+exclusivamente para usuarios registrados. Fue en diciembre cuando comencé la redacción de la memoria del proyecto.
+\begin{figure}
+  \centering
+  \includegraphics[width=15cm, keepaspectratio]{img/gann.png}
+  \caption{Diagrama de Gantt}
+  \label{fig:arquitectura}
+\end{figure}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -380,7 +408,127 @@ Lo importante es que quede claro cuánto tiempo llevas (tiempo natural, p.ej., 6
 \chapter{Estado del arte}
 \label{chap:estado}
 
-Descripción de las tecnologías que utilizas en tu trabajo. 
+En este capítulo se mostraran las herramientas y liberías usadas en el Trabajo de Fin de Grado. Esto nos 
+dara una visión de las tecnologias utilizadas a lo largo del proyecto.
+
+\section{Tecnologías y Herrmientas}
+\label{sec:tecnologías y herramientas}
+
+\subsection{Python}
+\label{subsec:Python}
+Python fue creado por Guido van Rossum a finales de los 80 y principios de los 90 en los Países Bajos. 
+Van Rossum diseñó el lenguaje con un enfoque en la legibilidad del código y la productividad del programador. 
+Su nombre está inspirado en los Monty Python, que era un grupo de comedia británico que el creador admiraba. 
+
+La primera versión, Python 0.9.0, fue lanzada en 1991, y desde entonces ha experimentado un crecimiento significativo, 
+convirtiéndose en uno de los lenguajes de programación más populares y utilizados en la actualidad.
+
+Python se destaca por su sintaxis simple, clara y precisa, la cual facilita la escritura de un código limpio y comprensible. 
+Además, cuenta con una amplia gama de bibliotecas estándar las cuales abarcan desde la manipulación de datos hasta el desarrollo web, 
+lo que acelera el proceso de desarrollo al proporcionar módulos y paquetes preexistentes. Esta capacidad de adaptación y su compatibilidad 
+con diversos paradigmas de programación, como la orientación a objetos y la funcional, han contribuido a su éxito en una variedad de aplicaciones, 
+desde desarrollo de software hasta análisis de datos y machine learning.
+
+\subsection{GitHub}
+\label{subsec:github}
+GitHub\footnote{\url{https://github.com/}} es un servicio basado en la nube que aloja un sistema de control de versiones (VCS) conocido como Git. Este sistema posibilita a los desarrolladores colaborar y efectuar cambios en proyectos compartidos mientras mantienen un seguimiento detallado de su progreso. Funciona como una plataforma web de desarrollo colaborativo de software, facilitando la colaboración y almacenamiento de proyectos, ya sean de código abierto o cerrado.
+
+En GitHub, los usuarios pueden crear y unirse a proyectos, permitiéndoles compartir ideas, discutir posibles soluciones y colaborar para mejorar los proyectos existentes. La principal ventaja de GitHub es la capacidad de trabajar en un proyecto desde cualquier lugar y en cualquier momento, ya que registra el desarrollo de los proyectos de forma remota en la nube, eliminando la necesidad de una infraestructura de hardware específica.
+
+La función principal de GitHub se centra en ofrecer a los desarrolladores herramientas esenciales, como bibliotecas y funciones para la gestión de versiones del software, manejo de problemas, revisión de código, entre otras. La plataforma integra la funcionalidad de Git, un sistema de control de versiones distribuido que registra un historial completo de cambios, permitiendo revisar y deshacer modificaciones en el código a lo largo del tiempo. Esta característica posibilita la colaboración de varios desarrolladores en un mismo proyecto.
+
+\subsection{PHPMyAdmin}
+\label{subsec:phpmyadmin}
+
+PHPMyAdmin es una herramienta escrita en PHP diseñada para facilitar la administración de bases de datos MySQL a través de páginas web, 
+utilizando un navegador. Su funcionalidad abarca la creación y eliminación de bases de datos, así como la capacidad de crear, modificar 
+y eliminar tablas. Permite realizar operaciones como borrar, editar y añadir campos, ejecutar sentencias SQL, administrar claves en campos, 
+gestionar privilegios y exportar datos en diversos formatos. Con soporte para 72 idiomas, esta herramienta está disponible bajo la licencia 
+GPL Versión 2.
+
+Desde su inicio en 1998, PHPMyAdmin ha sido altamente valorado en la comunidad de descargas de SourceForge.net, destacándose como la 
+descarga del mes de diciembre de 2002. A lo largo de su desarrollo, ha evolucionado tecnológicamente, adaptándose a las máquinas con 
+Servidores Webs y Soporte de PHP y MySQL.
+
+\subsection{JavaScript}
+\label{subsec:JavaScript}
+JavaScript\footnote{\url{https://developer.mozilla.org/es/docs/Web/JavaScript/Guide}} es un lenguaje de programación de alto nivel, interpretado y orientado a objetos. Es principalmente conocido por su capacidad para agregar interactividad y dinamismo a las páginas web. 
+
+Algunos puntos clave sobre JavaScript:
+
+\begin{enumerate}
+  \item \textbf{Lenguaje del lado del cliente:} JavaScript se ejecuta en el navegador del usuario, lo que lo convierte en un lenguaje de programación del lado del cliente. 
+  Esto significa que es procesado por el navegador web y puede interactuar con el contenido de la página, el DOM (Document Object Model) y otros elementos del navegador.
+  \item \textbf{Interactividad en el navegador:} JavaScript se utiliza comúnmente para agregar interactividad a las páginas web. Puede manipular el contenido de la página, 
+  responder a eventos del usuario (como clics y teclas), realizar validaciones de formularios y más.
+  \item \textbf{Asíncrono y callbacks:} Se trata de un lenguaje asincrónico por naturaleza, lo que significa que puede realizar tareas sin bloquear la ejecución del código. 
+  Esto se logra a través de callbacks y promesas, permitiendo operaciones como la carga de datos o la actualización del DOM sin detener la ejecución del resto del código.
+  \item \textbf{DOM Manipulation:} Es fundamental para la manipulación del DOM, que es la representación en memoria de la estructura de un documento HTML. 
+  Puede agregar, eliminar o modificar elementos en el DOM dinámicamente.
+  \item \textbf{Eventos:} JavaScript permite manejar eventos del usuario, como clics, teclas presionadas, desplazamientos, etc. Esto facilita la creación de aplicaciones 
+  web interactivas y receptivas.
+  \item \textbf{Ajax:} Se utiliza comúnmente en combinación con tecnologías como XMLHttpRequest o la interfaz Fetch para realizar solicitudes asíncronas al servidor y actualizar partes específicas de la página sin necesidad de recargarla por completo.
+  \item \textbf{Frameworks y bibliotecas:} Existen numerosos frameworks y bibliotecas de JavaScript, como React, Angular y Vue.js, que facilitan el desarrollo de aplicaciones web complejas 
+  mediante el uso de patrones y componentes predefinidos.
+  \item \textbf{ECMAScript:} Sigue las especificaciones definidas por ECMAScript, que establece las reglas y características del lenguaje. Las nuevas versiones de ECMAScript introducen mejoras 
+  y características adicionales, como las arrow functions, async/await, clases, y más.
+  \item \textbf{Pluriparadigmático:} Es un lenguaje de programación pluriparadigmático, lo que significa que admite varios estilos de programación, incluyendo programación orientada a objetos, funcional y procedural.
+\end{enumerate}
+
+\section{Liberías}
+\label{sec:Librerias}
+
+Descripción de las tecnologías utilizadas en el proyecto. 
+
+\subsection{Flask}
+\label{subsec:flask}
+Flask es un framework de web ligero y flexible para construir aplicaciones web en Python. Desarrollado por Armin Ronacher, 
+Flask se destaca por su simplicidad y su enfoque minimalista, permitiendo a los desarrolladores elegir las herramientas y 
+bibliotecas que mejor se adapten a sus necesidades.
+
+Características clave de Flask:
+\begin{enumerate}
+  \item \textbf{Simplicidad:} Flask sigue el principio de "hacer lo simple", proporcionando solo lo esencial para construir aplicaciones web. Su estructura modular permite a los desarrolladores agregar componentes según sea necesario.
+  \item \textbf{Microframework:} Flask es considerado un microframework, lo que significa que proporciona solo las características esenciales para construir aplicaciones web. Esto ofrece flexibilidad para elegir y agregar extensiones y bibliotecas según las necesidades del proyecto.
+  \item \textbf{Extensibilidad:} A pesar de ser liviano, Flask es altamente extensible. Ofrece una amplia gama de extensiones para agregar funcionalidades específicas, como la autenticación, manejo de formularios, ORM (Object-Relational Mapping), entre otras.
+  \item \textbf{Jinja2 como motor de plantillas:} Flask utiliza Jinja2 como su motor de plantillas, lo que permite a los desarrolladores generar contenido dinámico de manera sencilla y legible.
+  \item \textbf{Desarrollo rápido:} Flask facilita el desarrollo rápido de aplicaciones web al proporcionar un conjunto de herramientas básicas y una estructura simple. Esto lo convierte en una excelente opción para prototipos y proyectos pequeños, así como para aplicaciones web más complejas.
+  \item \textbf{Compatibilidad con HTTP:} Flask tiene una excelente compatibilidad con el protocolo HTTP, facilitando la manipulación de solicitudes y respuestas HTTP.
+  \item \textbf{Servidor de desarrollo incorporado:} Flask incluye un servidor de desarrollo incorporado, lo que facilita probar y depurar aplicaciones durante el desarrollo sin necesidad de configuraciones adicionales.
+  \item \textbf{Comunidad activa:} Flask cuenta con una comunidad activa de desarrolladores y una documentación bien estructurada, lo que facilita aprender y resolver problemas.
+\end{enumerate}
+
+\subsection{MySQL}
+\label{subsec:mysql}
+MySQL es un sistema de gestión de bases de datos relacional (RDBMS) de código abierto que utiliza el lenguaje de consulta estructurado (SQL) para gestionar y manipular datos. Fue desarrollado originalmente por MySQL AB, que luego fue adquirida por Sun Microsystems y, finalmente, por Oracle Corporation.
+
+Aquí hay algunas características clave de MySQL:
+\begin{enumerate}
+  \item \textbf{Relacional:} MySQL sigue el modelo relacional, lo que significa que organiza los datos en tablas con filas y columnas. Utiliza claves primarias y foráneas para establecer relaciones entre tablas.
+  \item \textbf{SQL:} MySQL utiliza SQL como lenguaje para realizar consultas y manipular datos. Es compatible con las funciones estándar de SQL, pero también incluye extensiones y características propias.
+  \item \textbf{Escalabilidad:} MySQL es conocido por su capacidad de escalar desde aplicaciones pequeñas hasta sistemas empresariales de gran envergadura. Ofrece opciones para replicación, particionamiento y clustering.
+  \item \textbf{Soporte para Transacciones:} MySQL es compatible con transacciones, lo que garantiza la consistencia de los datos incluso en entornos con múltiples operaciones concurrentes. Utiliza el concepto de COMMIT y ROLLBACK para confirmar o deshacer transacciones.
+  \item \textbf{Multiplataforma:} MySQL es compatible con varias plataformas, incluyendo sistemas operativos como Linux, Windows y macOS. Esto facilita la portabilidad de las aplicaciones desarrolladas con MySQL.
+  \item \textbf{Almacenamiento de Datos:} MySQL ofrece diferentes motores de almacenamiento, cada uno con sus propias características. InnoDB es uno de los motores más populares y es conocido por su soporte de transacciones ACID.
+  \item \textbf{Comunidad Activa:} MySQL cuenta con una amplia comunidad de usuarios y desarrolladores. Además, existe una versión de código abierto llamada MySQL Community Edition, así como una versión comercial con características adicionales denominada MySQL Enterprise Edition.
+  \item \textbf{Herramientas y Utilidades:} MySQL proporciona varias herramientas y utilidades para administrar y monitorear bases de datos. Entre ellas se incluyen MySQL Workbench para diseño y administración visual, así como utilidades de línea de comandos como mysqldump y mysqladmin.
+\end{enumerate}
+MySQL es ampliamente utilizado en el desarrollo web y en una variedad de aplicaciones, desde sitios web pequeños hasta aplicaciones empresariales complejas. Su popularidad se debe a su rendimiento confiable, su naturaleza de código abierto y su robusta comunidad de usuarios.
+
+\subsection{Bootstrap}
+\label{subsec:bootstrap}
+Bootstrap es un popular framework de desarrollo frontend que facilita la creación de interfaces de usuario atractivas y responsivas para aplicaciones web. Fue creado por Twitter y está basado en HTML, CSS y JavaScript. Aquí hay algunas características clave de Bootstrap:
+
+\begin{enumerate}
+  \item \textbf{Diseño Responsivo} Bootstrap se destaca por su diseño responsivo, lo que significa que las aplicaciones web construidas con Bootstrap se adaptan de manera automática y elegante a diferentes tamaños de pantalla, ya sea en dispositivos móviles, tabletas o computadoras de escritorio.
+  \item \textbf{Grid System:} Bootstrap utiliza un sistema de rejilla (grid system) para organizar el diseño de la página en filas y columnas. Esto facilita la creación de diseños flexibles y adaptables.
+  \item \textbf{Componentes Reutilizables:} Bootstrap ofrece una amplia variedad de componentes predefinidos, como botones, formularios, navegación, alertas y más. Estos componentes son fáciles de usar y pueden personalizarse según las necesidades del proyecto.
+  \item \textbf{Tipografía y Estilos:} Bootstrap incluye estilos predeterminados para la tipografía, lo que garantiza una apariencia consistente en toda la aplicación. También proporciona clases CSS para estilizar elementos comunes de manera rápida.
+  \item \textbf{JavaScript Incorporado:} Bootstrap incluye funcionalidades interactivas y dinámicas gracias al uso de JavaScript. Esto incluye componentes como modales, carruseles, desplegables y más.
+  \item \textbf{Personalización:} Aunque Bootstrap ofrece un conjunto completo de estilos y componentes, es altamente personalizable. Los desarrolladores pueden ajustar el aspecto y la sensación de sus aplicaciones modificando variables en el código fuente o utilizando temas personalizados.
+  \item \textbf{Documentación Detallada:} Bootstrap cuenta con una documentación exhaustiva y fácil de entender. Esta documentación proporciona ejemplos de código y guías que ayudan a los desarrolladores a utilizar eficazmente las características de Bootstrap.
+  \item \textbf{Comunidad Activa:} Bootstrap cuenta con una amplia comunidad de desarrolladores y diseñadores, lo que facilita la obtención de ayuda, recursos adicionales y contribuciones a la mejora continua del framework.
+\end{enumerate}
 Con dos o tres párrafos por cada tecnología, vale. 
 Se supone que aquí viene todo lo que no has hecho tú.
 
@@ -459,26 +607,36 @@ Puedes probarlo en \url{https://www.tablesgenerator.com/}.
 \chapter{Diseño e implementación}
 \label{sec:diseno}
 
-Aquí viene todo lo que has hecho tú (tecnológicamente). 
-Puedes entrar hasta el detalle. 
-Es la parte más importante de la memoria, porque describe lo que has hecho tú.
-Eso sí, normalmente aconsejo no poner código, sino diagramas.
+A continuación, se expondrán con detalle los métodos y herramientas empleados en la ejecución del proyecto, 
+ofreciendo una perspectiva minuciosa sobre el desarrollo de la iniciativa que tiene como finalidad la creación 
+de una página web para el almacenamiento de toda la documentación relevante. Este capítulo ahonda en las diversas 
+etapas del proyecto, detallando las decisiones adoptadas y las justificaciones vinculadas a las metodologías seleccionadas. 
+Asimismo, se expone el diseño e implementación del proyecto con la intención de proporcionar a otros la capacidad de 
+contribuir, adaptar o ampliar el sistema. Esta sección brinda una visión completa de cómo se estructuró y llevó a cabo 
+el proyecto, abarcando las distintas fases de su creación.
 
 
 
 \section{Arquitectura general} 
 \label{sec:arquitectura}
 
-Si tu proyecto es un software, siempre es bueno poner la arquitectura (que es cómo se estructura tu programa a ``vista de pájaro'').
 
+En la Figura 4.1 se muestra un esquema general de la estructura de la página web. En esta página, 
+se puede acceder tanto como usuario registrado o como visitante. La diferencia principal radica en 
+los privilegios para realizar ciertas acciones.
+
+Cuando accedes como visitante, tienes acceso a la vista de la página, lo que significa que puedes 
+ver el contenido que se encuentra publicado. Sin embargo, no puedes comentar, subir contenido nuevo 
+ni dejar comentarios en las publicaciones existentes. Estas funciones están reservadas para los usuarios 
+registrados, quienes tienen permisos adicionales para interactuar con la página.
 \begin{figure}
   \centering
-  \includegraphics[width=9cm, keepaspectratio]{img/arquitectura.png}
-  \caption{Estructura del parser básico}
+  \includegraphics[width=9cm, keepaspectratio]{img/esquema.png}
+  \caption{Estructura página web}
   \label{fig:arquitectura}
 \end{figure}
 
-
+La pagina esta diseñada con el framework de Flask, utiliza una base de datos de xampp el cual esta
 Por ejemplo, puedes verlo en la figura~\ref{fig:arquitectura}.
 \LaTeX \ pone las figuras donde mejor cuadran. 
 Y eso quiere decir que quizás no lo haga donde lo hemos puesto\ldots 
@@ -494,6 +652,8 @@ Por ejemplo: En la figura~\ref{fig:arquitectura} se puede ver que la estructura 
 
 Si utilizas una base de datos, no te olvides de incluir también un diagrama de entidad-relación.
 
+\section{Arquitectura general} 
+\label{sec:arquitectura}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
