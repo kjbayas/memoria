@@ -585,23 +585,197 @@ Esta sección brinda una visión completa de cómo se estructuró y llevó a cab
 \section{Arquitectura general} 
 \label{sec:arquitectura}
 
+En esta sección, es examinada en detalle la arquitectura general del proyecto. La organización de los archivos y directorios tiene un propósito específico que soporta 
+la funcionalidad, el mantenimiento, y la escalabilidad del proyecto. Entender esta estructura facilita navegar por el código y contribuye al desarrollo del proyecto.
+
+La estructura del proyecto se describe a continuación:
 
 \begin{itemize}
-  \item \texttt{static/}: Carpeta donde se almacenan archivos estáticos como CSS, JavaScript, imágenes y otros archivos que el cliente puede solicitar directamente.
-  \item \texttt{templates/}: Carpeta que contiene plantillas HTML. Flask usará estas plantillas para generar HTML que se enviará al cliente.
-  \item \texttt{venv/}: Un entorno virtual Python. Al instalar paquetes en un entorno virtual, en lugar de a nivel global, puedes evitar conflictos de paquetes entre proyectos.
-  \item \texttt{\_init\_.py}: Archivo especial que le dice a Python que el directorio debe ser tratado como un paquete.
-  \item \texttt{admin\_routes.py, sitio\_routes.py}: Estos módulos definen las rutas de la aplicación, las URL que manejará la aplicación .
-  \item \texttt{app.py}: Este es el punto de entrada de la aplicación. Inicializa la aplicación y engloba todo.
-  \item \texttt{config.py}: Valores de configuración de la aplicación, claves secretas y los nombres de la base de datos.
-  \item \texttt{decorators.py}: Decoradores personalizados, para características como permisos de acceso y autenticación.
-  \item \texttt{Dockerfile}: Un archivo para crear una imagen Docker de tu aplicación.
-  \item \texttt{requirements.txt}: Una lista de dependencias de Python que se pueden instalar usando pip.
+  \item \texttt{static/}: Este directorio alberga los archivos estáticos tales como las hojas de estilo CSS, los scripts JavaScript, las imágenes, y otros tipos de 
+  archivos multimedia, que son solicitados directamente por el cliente.
+  \item \texttt{templates/}: Este directorio contiene las plantillas HTML. Flask se sirve de estas plantillas para generar el HTML que será enviado al cliente para 
+  representar la interfaz gráfica de usuario.
+  \item \texttt{venv/}: Un entorno virtual de Python que se utiliza para instalar las dependencias del proyecto. Usar un entorno virtual permite evitar conflictos 
+  entre las dependencias de distintos proyectos al instalar los paquetes de manera aislada y no a nivel global.
+  \item \texttt{\_init\_.py}: Un archivo especial que le indica a Python que el directorio debería ser tratado como un paquete. Este archivo generalmente puede estar 
+  vacío pero también puede contener código de inicialización de paquete.
+  \item \texttt{admin\_routes.py, sitio\_routes.py}: Estos módulos definen las rutas de la aplicación, es decir, asignan las URL a la función que se encargo de manejar 
+  las solicitudes a esa URL.
+  \item \texttt{app.py}: Este archivo constituye el punto de entrada de la aplicación. Aquí es donde se inicializa la aplicación Flask y se integra el resto de los componentes del proyecto.
+  \item \texttt{config.py}: Contiene los valores de configuración de la aplicación, tales como las claves secretas y la información de conexión a la base de datos.
+  \item \texttt{decorators.py}: Definición de los decoradores personalizados utilizados en el proyecto. Los decoradores pueden ser utilizados para añadir funcionalidades 
+  extra a las funciones o métodos, como el control de permisos de acceso y autenticación.
+  \item \texttt{Dockerfile}: Un archivo que contiene las instrucciones para crear una imagen Docker de la aplicación. Se utiliza para desplegar la aplicación en un 
+  contenedor Docker, lo que facilita su despliegue en producción.
+  \item \texttt{requirements.txt}: Este archivo lista las dependencias de Python necesarias para que el proyecto funcione. Estas dependencias pueden ser instaladas usando pip.
 \end{itemize}
 
-Esta estructura permitira una separación limpia de las funcionalidades y apoya el mantenimiento y la escalabilidad del proyecto a medida que crece. 
+Este esquema coherente y lógico de archivos y directorios ayuda a mantener los diversos aspectos de la aplicación separados y claros, permitiendo una alimentación 
+eficiente de las funcionalidades y respaldando el mantenimiento y la escalabilidad del proyecto a medida que se desarrolla.
+
+\section{Arquitectura específica} 
+\label{sec:arquitectura}
+
+\subsection{Programa principal}
+\label{subsec:programaprincipal}
+
+El archivo \texttt{app.py} se inicializa la aplicación Flask y se establece la configuración principal de la misma. Las configuraciones incluyen la conexión a la base de datos 
+MySQL, la inicialización del correo y la generación de una clave secreta para la sesión.
+Con el fin de proveer mayor seguridad, se implementa un decorador \texttt{login\_required}, el cual se encarga de verificar si el usuario ha iniciado sesión antes de 
+poder acceder a ciertas rutas.
+
+A continuación, se encuentran varias rutas esenciales del proyecto con sus respectivas funciones de manejo:
+
+\begin{itemize}
+   \item \texttt{/}: Redirige al usuario a la página principal.
+   \item \texttt{/ver\_libro()}: Con esta función se puede visualizar el detalle de cada libro, la función realiza una consulta a la base de datos para obtener la 
+   información específica de un libro. También se manejan los errores en caso de no encontrar el libro en cuestión.
+   \item \texttt{/update\_event()}: Esta ruta se utiliza para actualizar los detalles de un evento específico, donde se recogen los datos del evento a través de una 
+   consulta POST y se actualizan en la base de datos.
+   \item \texttt{/insert\_event()}: Esta función maneja la inserción de un nuevo evento en la base de datos al recibir la información relevante del evento a través de una consulta POST.
+   \item \texttt{/ajax\_delete()}: Esta función realiza la eliminación de un evento específico cuando se recibe una solicitud POST que contiene el id del evento a eliminar.
+\end{itemize}
+
+Finalmente, el registro de los blueprints se realiza al final. Los blueprints son plantillas que permiten la organización de las rutas y proporcionan modularidad a la 
+aplicación. En este caso, se tienen dos blueprints: \texttt{admin\_bp} y \texttt{sitio\_bp} los cuales agrupan las rutas asociadas a las funcionalidades del administrador 
+y del sitio respectivamente.
+
+La aplicación se inicia únicamente si \texttt{app.py} se ejecuta como el módulo principal de Python, proporcionando un punto de entrada para iniciar la aplicación. 
+En este caso, la aplicación se ejecuta en modo depuración, lo que significa que Flask proporcionará una página con información de depuración detallada si se produce un error.
+
+\subsection{Configuración}
+\label{subsec:configuración}
+
+El archivo \texttt{config.py} contiene la configuración esencial de la plataforma web. Este archivo es fundamental en cualquier aplicación Flask, ya que su principal objetivo 
+es mantener todos los valores de configuración en un solo lugar para facilitar la administración y el mantenimiento.
+
+En este archivo, se define una clase \texttt{Config} que contiene las siguientes configuraciones:
+
+\begin{itemize}
+    \item \textbf{MYSQL\_HOST}: Es la dirección del servidor de la base de datos MySQL que se utilizará. Se proporcionan varias opciones comentadas para poder cambiar rápidamente de host.
+    \item \textbf{MYSQL\_USER}: Es el nombre de usuario para acceder a la base de datos MySQL.
+    \item \textbf{MYSQL\_PASSWORD}: Es la contraseña del usuario de la base de datos MySQL.
+    \item \textbf{MYSQL\_DB}: Es el nombre de la base de datos a la cual se establecerá la conexión.
+    \item \textbf{MAIL\_SERVER}: Es el servidor de correo que se utiliza para enviar correos electrónicos desde la aplicación.
+    \item \textbf{MAIL\_PORT}: Es el puerto al que se conectará para enviar correos electrónicos.
+    \item \textbf{MAIL\_USE\_TLS}: Es una opción de configuración para utilizar TLS para la conexión.
+    \item \textbf{MAIL\_USERNAME}: Es la dirección de correo electrónico que se utilizará para enviar correos.
+    \item \textbf{MAIL\_PASSWORD}: Es la contraseña de la cuenta de correo electrónico que se utilizará para enviar correos.
+\end{itemize}
+
+Todos estos valores se almacenan como variables de clase dentro de la clase \texttt{Config} y pueden ser accedidos una vez que se crea una instancia de la misma.
+
+Posteriormente, se crean dos objetos para manejar las conexiones a MySQL y al servicio de correo. Estos objetos serán utilizados más adelante para interactuar con 
+la base de datos y con el servidor de correo, respectivamente.
+
+\subsection{Decoradores}
+\label{subsec:decoradores}
+
+En Python, un decorador es una función que toma otra función y extiende su comportamiento sin modificarla explícitamente. Los decoradores proporcionan una forma 
+sencilla y legible de agregar funcionalidades adicionales a las funciones y métodos existentes.
+
+El archivo \texttt{decorators.py} contiene la definición de un decorador personalizado:
+
+\begin{itemize}
+    \item \textbf{login\_required}: Este decorador se utiliza para garantizar que el usuario esté autenticado antes de poder acceder a ciertas rutas de la aplicación web. 
+    Específicamente, verifica si el valor 'login' está presente en el objeto de sesión de Flask. Si no es así, redirige al usuario al formulario de inicio de sesión. 
+    Si el usuario está autenticado, la función decorada se ejecuta como se espera.
+\end{itemize}
+
+Con este decorador, la comprobación de autenticación se puede realizar de manera sencilla y consistente en todas las rutas que requieran que el usuario esté autenticado. 
+Simplemente es necesario incluir \texttt{@login\_required} antes de la definición de la función de la ruta para aplicar esta comprobación.
+
+Este uso de los decoradores ayuda a mantener el código limpio y legible, y refuerza que cada pieza de código tiene un propósito específico.
+
+El decorador \texttt{@wraps(func)} se usa para mantener el nombre y la documentación de las funciones originales cuando se usan con decoradores. Esto es útil para la 
+depuración y también para trabajar con la documentación de ayuda (\texttt{help}) incorporada en Python.
 
 
+\subsection{Rutas del Sitio}
+\label{sec:rutas_sitio}
+
+El archivo \texttt{sitio\_routes.py} es un módulo que contiene la definición de las rutas y las funciones de manejo asociadas al sitio principal.
+
+Comienza con la creación de una instancia de \texttt{Blueprint}, que se utiliza para organizar las rutas en la aplicación Flask. Tener las rutas en un \texttt{Blueprint} permite la modularidad y la reutilización del código.
+
+Las rutas específicas del 'sitio' y sus funciones de manejo son las siguientes:
+
+\begin{itemize}
+    \item \texttt{/books()}: Esta función se encarga de obtener todos los libros de la base de datos y renderizar la plantilla \texttt{books.html} para mostrarlos.
+    \item \texttt{/buscar\_libros()}: Con esta función, se permite buscar libros en base al año, área y autor. La función construye una consulta SQL en base a los 
+    parámetros de búsqueda ingresados y obtiene los resultados correspondientes de la base de datos.
+    \item \texttt{/calendar()}: La ruta del calendario se utiliza para mostrar los eventos. La función maneja el acceso a la base de datos para obtener todos los 
+    eventos y luego los muestra en la plantilla \texttt{calendar.html}.
+    \item \texttt{/links()}: Esta ruta se encarga de recopilar todos los enlaces disponibles en la base de datos y renderizar la plantilla \texttt{links.html} para mostrarlos.
+    \item \texttt{/link\_detail()}: Esta función maneja la visualización detallada de un único enlace. La función toma un parámetro \texttt{link\_id} de la URL, 
+    realiza una consulta a la base de datos para obtener los detalles de ese enlace en particular y los muestra en la plantilla \texttt{link\_detail.html}.
+    \item \texttt{/journals()}: Para las derivaciones de revistas, esta función se encarga de obtener todas las revistas de la base de datos y renderizar la 
+    plantilla \texttt{journals.html} para mostrarlas.
+\end{itemize}
+
+Este módulo de rutas del 'sitio' se encarga de manejar todas las peticiones con respecto a la visualización de libros, enlaces y revistas en el sitio principal, así como la búsqueda de libros y la visualización del calendario.
+
+\subsection{Rutas del Administrador}
+\label{sec:rutas_admin}
+
+El archivo \texttt{admin\_routes.py} contiene la definición de las rutas asociadas a las funcionalidades del administrador en la plataforma web.
+
+\begin{enumerate}
+    \item \textbf{Verificación de Inicio de Sesión}
+    \begin{itemize}
+        \item \texttt{/admin\_index()}: Página de inicio del administrador, requiere autenticación.
+        \item \texttt{/admin\_login()} y \texttt{/admin\_login\_post()}: Manejan el inicio de sesión del administrador.
+        \item \texttt{/admin\_login\_cerrar()}: Cierra la sesión del usuario administrador.
+        \item \texttt{/admin\_registro()}: Registra un nuevo usuario administrador.
+        \item \texttt{/olvide\_contrasena()} y \texttt{/restablecer\_contrasena()}: Proceso de restablecimiento de contraseña.
+    \end{itemize}
+
+    \item \textbf{Manejo de Libros}
+    \begin{itemize}
+        \item \texttt{/admin\_books()}: Operaciones de libros en la interfaz de administración.
+        \item \texttt{/guardar\_archivo()}: Maneja el guardado de archivos cargados por el usuario.
+        \item \texttt{/admin\_libros\_guardar()}: Maneja la lógica para guardar un nuevo libro en la base de datos.
+        \item \texttt{/admin\_books\_delete()}: Elimina un libro existente de la base de datos.
+    \end{itemize}
+
+    \item \textbf{Manejo de Permisos de Usuarios}
+    \begin{itemize}
+        \item \texttt{/admin\_permisos()}: Permite a los administradores gestionar los permisos de otros usuarios.
+        \item \texttt{/admin\_permisos\_editar()}: Actualiza los campos de permisos existentes en la tabla de usuarios.
+        \item \texttt{/admin\_permisos\_eliminar()} y \texttt{/admin\_permisos\_aceptar()}: Eliminan usuarios y aceptan solicitudes de registro pendientes, respectivamente.
+    \end{itemize}
+
+    \item \textbf{Manejo de Comentarios}
+    \begin{itemize}
+        \item \texttt{/agregar\_comentario()}: Agrega comentarios a un libro en la base de datos.
+        \item \texttt{/eliminar\_comentario()}: Elimina un comentario seleccionado de un libro en la base de datos.
+    \end{itemize}
+
+    \item \textbf{Manejo de Enlaces}
+    \begin{itemize}
+        \item \texttt{/admin\_links()}: Permite a los administradores gestionar los enlaces en la plataforma.
+        \item \texttt{/admin\_links\_guardar()}: Guarda un nuevo enlace en la base de datos.
+        \item \texttt{/admin\_links\_delete()}: Elimina un enlace de la base de datos.
+    \end{itemize}
+
+    \item \textbf{Manejo de Diarios}
+    \begin{itemize}
+        \item \texttt{/admin\_journals()}: Permite a los administradores gestionar los diarios en la plataforma.
+        \item \texttt{/admin\_journals\_guardar()}: Guarda un nuevo diario en la base de datos.
+        \item \texttt{/admin\_journals\_delete()}: Elimina un diario de la base de datos.
+    \end{itemize}
+
+    \item \textbf{Manejo del Calendario}
+    \begin{itemize}
+        \item \texttt{/admin\_calendar()}: Muestra los eventos almacenados en la base de datos en un formato de calendario. Verifica los roles de los 
+        usuarios para determinar si tienen permiso para acceder.
+    \end{itemize}
+\end{enumerate}
+
+En resumen, el archivo \texttt{admin\_routes.py} maneja todos los aspectos relacionados con la autenticación, el manejo de sesiones y las funcionalidades administrativas de la plataforma web.
+
+\section{Vista de Usuario}
+\label{sec:vista_usuarios}
 La Figura 4.1 muestra un esquema general de la estructura de la página web. Esta página es accesible tanto para usuarios registrados 
 como para visitantes, aunque la principal distinción entre estos dos roles radica en los privilegios que poseen.
 
@@ -620,6 +794,23 @@ todas las funciones que ofrece la plataforma.
   \label{fig:arquitectura}
 \end{figure}
 
+\subsection{Vista de Usuario - No Registrado}
+\label{sec:vista_usuarios_no_registrado}
+
+\begin{itemize}
+  \item \texttt{sitio/\_top\_of\_page.html}: Barra de navegación principal de la aplicación. Aquí se incluyen los enlaces a las diferentes páginas y funcionalidades del sitio web.
+  \item \texttt{sitio/\_index.html}: Es la página de inicio de la plataforma.
+  \item \texttt{sitio/\_books.html}: Se ocupa de la estructura y propiedades de la página de libros. Aquí es donde se muestran los libros en la plataforma y se pueden seleccionar para visualizar más detalles
+  \item \textbf{}
+    \begin{itemize}
+        \item \texttt{/admin\_calendar()}: Muestra los eventos almacenados en la base de datos en un formato de calendario. Verifica los roles de los 
+        usuarios para determinar si tienen permiso para acceder.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Vista de Usuario - Registrado}
+\label{sec:vista_usuarios_registrado}
+
 La pagina esta diseñada con el framework de Flask, utiliza una base de datos de xampp el cual esta
 Por ejemplo, puedes verlo en la figura~\ref{fig:arquitectura}.
 \LaTeX \ pone las figuras donde mejor cuadran. 
@@ -636,8 +827,7 @@ Por ejemplo: En la figura~\ref{fig:arquitectura} se puede ver que la estructura 
 
 Si utilizas una base de datos, no te olvides de incluir también un diagrama de entidad-relación.
 
-\section{Arquitectura general} 
-\label{sec:arquitectura}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
